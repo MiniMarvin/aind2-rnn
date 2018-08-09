@@ -58,6 +58,8 @@ def cleaned_text(text):
         if c not in normalText:
             text = text.replace(c, ' ')
 
+    text = ' '.join(text.split())
+
     return text
 
 ### TODO: fill out the function below that transforms the input text and window-size into a set of input/output pairs for use with our RNN model
