@@ -45,15 +45,20 @@ def cleaned_text(text):
     text = text.replace('\n', ' ')
     text = text.replace('\r', ' ')
     text = text.split(' ')
-    text = [t for t in text if '\\' not in t]
+    text = [t for t in text if '\\' not in t] # remove all words containing \
     text = ' '.join(text)
 
-    import string
+    normalText = "abcdefghijklmnopqrstuvwxyz"
+    normalText = normalText.split()
+    normalText = [a for a in normalText] + punctuation
 
-    for p in string.punctuation:
-        if p not in punctuation:
+    allChars = set(text)
+
+    for c in allChars:
+        if p not in normalText:
             text = text.replace(p, ' ')
-        
+    
+
 
     return text
 
