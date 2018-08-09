@@ -55,7 +55,7 @@ def cleaned_text(text):
     allChars = set(text)
 
     for c in allChars:
-        if p not in normalText:
+        if c not in normalText:
             text = text.replace(p, ' ')
     
 
