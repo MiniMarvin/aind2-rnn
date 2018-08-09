@@ -67,10 +67,10 @@ def window_transform_text(text, window_size, step_size):
     inputs = []
     outputs = []
 
-    for x in range(0, len(text) - window_size - 1, step_size):
-        buff = text[x:x+5]
+    for x in range(0, len(text) - window_size, step_size):
+        buff = text[x:x+window_size]
         inputs.append(buff)
-        outputs.append(text[x+5])
+        outputs.append(text[x+window_size])
 
     return inputs,outputs
 
