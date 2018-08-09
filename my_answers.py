@@ -49,11 +49,10 @@ def cleaned_text(text):
     text = ' '.join(text)
 
     normalText = "abcdefghijklmnopqrstuvwxyz"
-    normalText = normalText.split()
     normalText = [a for a in normalText] + punctuation
 
     allChars = set(text)
-
+    
     for c in allChars:
         if c not in normalText:
             text = text.replace(c, ' ')
