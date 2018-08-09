@@ -45,7 +45,7 @@ def cleaned_text(text):
     text = text.replace('\n', ' ')
     text = text.replace('\r', ' ')
     text = text.split(' ')
-    text = [t for t in text if '\\' not in t] # remove all words containing \
+    text = [t for t in text if t[0] != '\\'] # remove all words containing \
     text = ' '.join(text)
 
     normalText = "abcdefghijklmnopqrstuvwxyz"
