@@ -42,9 +42,18 @@ def build_part1_RNN(window_size):
 def cleaned_text(text):
     punctuation = ['!', ',', '.', ':', ';', '?']
     text = text.lower()
+    text = text.replace('\n', ' ')
+    text = text.replace('\r', ' ')
+    text = text.split(' ')
+    text = [t for t in text if '\\' not in t]
+    text = ' '.join(text)
 
-    for p in punctuation:
-        text = text.replace(p, ' ')
+    import string
+
+    for p in string.punctuation:
+        if p not in punctuation:
+            text = text.replace(p, ' ')
+        
 
     return text
 
